@@ -1,0 +1,131 @@
+object Form1: TForm1
+  Left = 316
+  Height = 599
+  Top = 211
+  Width = 891
+  Caption = 'Справочник коммерческих банков'
+  ClientHeight = 599
+  ClientWidth = 891
+  OnCreate = FormCreate
+  LCLVersion = '1.8.2.0'
+  object Button1: TButton
+    Left = 26
+    Height = 25
+    Top = 24
+    Width = 130
+    Caption = 'Подключение'
+    OnClick = Button1Click
+    TabOrder = 0
+  end
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 495
+    Top = 104
+    Width = 891
+    Align = alBottom
+    Color = clWindow
+    Columns = <>
+    DataSource = DataSource1
+    TabOrder = 1
+    OnSelectEditor = DBGrid1SelectEditor
+  end
+  object Image1: TImage
+    Left = 585
+    Height = 90
+    Top = 8
+    Width = 286
+  end
+  object DBNavigator1: TDBNavigator
+    Left = 286
+    Height = 25
+    Top = 24
+    Width = 241
+    BevelOuter = bvNone
+    ChildSizing.EnlargeHorizontal = crsScaleChilds
+    ChildSizing.EnlargeVertical = crsScaleChilds
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 100
+    ClientHeight = 25
+    ClientWidth = 241
+    DataSource = DataSource1
+    Options = []
+    TabOrder = 2
+  end
+  object Label1: TLabel
+    Left = 123
+    Height = 1
+    Top = 87
+    Width = 1
+    ParentColor = False
+  end
+  object Button2: TButton
+    Left = 26
+    Height = 25
+    Top = 73
+    Width = 182
+    Caption = 'Сортировать по убыванию %'
+    OnClick = Button2Click
+    TabOrder = 3
+  end
+  object Button3: TButton
+    Left = 208
+    Height = 25
+    Top = 72
+    Width = 182
+    Caption = 'Сортировать по возрастанию %'
+    OnClick = Button3Click
+    TabOrder = 4
+  end
+  object Button4: TButton
+    Left = 26
+    Height = 25
+    Top = 48
+    Width = 130
+    Caption = 'Сортировать'
+    OnClick = Button4Click
+    TabOrder = 5
+  end
+  object Button5: TButton
+    Left = 156
+    Height = 25
+    Top = 24
+    Width = 117
+    Caption = 'Отключение'
+    OnClick = Button5Click
+    TabOrder = 6
+  end
+  object SQLTransaction1: TSQLTransaction
+    Active = False
+    Database = MySQL56Connection1
+    left = 439
+    top = 56
+  end
+  object SQLQuery1: TSQLQuery
+    FieldDefs = <>
+    Database = MySQL56Connection1
+    Transaction = SQLTransaction1
+    Params = <>
+    left = 478
+    top = 56
+  end
+  object DataSource1: TDataSource
+    DataSet = SQLQuery1
+    left = 517
+    top = 56
+  end
+  object MySQL56Connection1: TMySQL56Connection
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'kb'
+    KeepConnection = False
+    Transaction = SQLTransaction1
+    UserName = 'root'
+    CharSet = 'UTF8'
+    HostName = 'localhost'
+    SkipLibraryVersionCheck = False
+    left = 403
+    top = 56
+  end
+end
