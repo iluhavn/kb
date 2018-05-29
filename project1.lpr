@@ -7,12 +7,14 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, Unit1, Unit3, unit2
+  Forms, Unit1, Unit3, unit2, runtimetypeinfocontrols, lazcontrols,
+  datetimectrls
   { you can add units after this };
 
 {$R *.res}
 
 begin
+  Application.Title:='СommercialBankDirectory';
   RequireDerivedFormResource:=True;
   Application.Initialize;
   Application.CreateForm(TForm1, Form1);

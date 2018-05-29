@@ -1,0 +1,281 @@
+object Form1: TForm1
+  Left = 295
+  Height = 662
+  Top = 125
+  Width = 920
+  Caption = 'Справочник коммерческих банков'
+  ClientHeight = 662
+  ClientWidth = 920
+  OnCreate = FormCreate
+  LCLVersion = '1.6.4.0'
+  object Button1: TButton
+    Left = 1
+    Height = 25
+    Top = 0
+    Width = 130
+    Caption = 'Подключение'
+    OnClick = Button1Click
+    TabOrder = 0
+  end
+  object DBGrid1: TDBGrid
+    Left = 1
+    Height = 448
+    Top = 72
+    Width = 919
+    Color = clWindow
+    Columns = <>
+    DataSource = DataSource1
+    TabOrder = 1
+    OnSelectEditor = DBGrid1SelectEditor
+  end
+  object Image1: TImage
+    Left = 712
+    Height = 88
+    Top = 560
+    Width = 192
+  end
+  object DBNavigator1: TDBNavigator
+    Left = 160
+    Height = 25
+    Top = 520
+    Width = 241
+    BevelOuter = bvNone
+    ChildSizing.EnlargeHorizontal = crsScaleChilds
+    ChildSizing.EnlargeVertical = crsScaleChilds
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 100
+    ClientHeight = 25
+    ClientWidth = 241
+    DataSource = DataSource1
+    OnClick = DBNavigator1Click
+    Options = []
+    TabOrder = 2
+  end
+  object Label1: TLabel
+    Left = 123
+    Height = 1
+    Top = 87
+    Width = 1
+    ParentColor = False
+  end
+  object Button2: TButton
+    Left = 312
+    Height = 25
+    Top = 0
+    Width = 182
+    Caption = 'Сортировать по убыванию %'
+    OnClick = Button2Click
+    TabOrder = 3
+  end
+  object Button3: TButton
+    Left = 312
+    Height = 25
+    Top = 24
+    Width = 182
+    Caption = 'Сортировать по возрастанию %'
+    OnClick = Button3Click
+    TabOrder = 4
+  end
+  object Button4: TButton
+    Left = 1
+    Height = 25
+    Top = 24
+    Width = 130
+    Caption = 'Фильтр'
+    OnClick = Button4Click
+    TabOrder = 5
+  end
+  object Button5: TButton
+    Left = 128
+    Height = 25
+    Top = 0
+    Width = 117
+    Caption = 'Отключение'
+    OnClick = Button5Click
+    TabOrder = 6
+  end
+  object DBEdit1: TDBEdit
+    Left = 91
+    Height = 21
+    Top = 560
+    Width = 248
+    DataField = 'Наименование'
+    DataSource = DataSource1
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 7
+    OnChange = DBEdit1Change
+  end
+  object Label5: TLabel
+    Left = 43
+    Height = 13
+    Top = 608
+    Width = 36
+    Caption = 'Статус'
+    ParentColor = False
+  end
+  object Label4: TLabel
+    Left = 3
+    Height = 13
+    Top = 584
+    Width = 67
+    Caption = 'Вклад на год'
+    ParentColor = False
+  end
+  object Label3: TLabel
+    Left = 360
+    Height = 13
+    Top = 562
+    Width = 31
+    Caption = 'Адрес'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 0
+    Height = 13
+    Top = 560
+    Width = 73
+    Caption = 'Наименование'
+    ParentColor = False
+  end
+  object DBMemo1: TDBMemo
+    Left = 408
+    Height = 90
+    Top = 560
+    Width = 296
+    DataField = 'Адрес'
+    DataSource = DataSource1
+    TabOrder = 8
+  end
+  object DBEdit2: TDBEdit
+    Left = 91
+    Height = 21
+    Top = 584
+    Width = 80
+    DataField = 'Вклад на год'
+    DataSource = DataSource1
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 9
+  end
+  object DBEdit3: TDBEdit
+    Left = 91
+    Height = 21
+    Top = 608
+    Width = 80
+    DataField = 'Статус'
+    DataSource = DataSource1
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 10
+  end
+  object Button6: TButton
+    Left = 128
+    Height = 25
+    Top = 24
+    Width = 117
+    Caption = 'Очистить фильтр'
+    OnClick = Button6Click
+    TabOrder = 11
+  end
+  object Label6: TLabel
+    Left = 760
+    Height = 13
+    Top = 544
+    Width = 75
+    Caption = 'Логотип банка'
+    ParentColor = False
+  end
+  object Button7: TButton
+    Left = 312
+    Height = 25
+    Top = 48
+    Width = 182
+    Caption = 'Отменить сортировку'
+    OnClick = Button7Click
+    TabOrder = 12
+  end
+  object Button8: TButton
+    Left = 305
+    Height = 25
+    Top = 625
+    Width = 88
+    Caption = 'Сохранить'
+    OnClick = Button8Click
+    TabOrder = 13
+  end
+  object SQLTransaction1: TSQLTransaction
+    Active = False
+    Database = MySQL56Connection1
+    Options = []
+    left = 528
+    top = 8
+  end
+  object SQLQuery1: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'id'
+        DataType = ftAutoInc
+        Precision = -1
+      end    
+      item
+        Name = 'Наименование'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'Адрес'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 240
+      end    
+      item
+        Name = 'Вклад на год'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = 'Статус'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'Изображение'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 150
+      end>
+    Database = MySQL56Connection1
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'SELECT * FROM komer4banki;'
+    )
+    Options = []
+    Params = <>
+    left = 560
+    top = 8
+  end
+  object DataSource1: TDataSource
+    DataSet = SQLQuery1
+    left = 592
+    top = 8
+  end
+  object MySQL56Connection1: TMySQL56Connection
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'kb'
+    KeepConnection = False
+    Transaction = SQLTransaction1
+    UserName = 'root'
+    CharSet = 'UTF8'
+    HostName = 'localhost'
+    Options = []
+    SkipLibraryVersionCheck = False
+    left = 496
+    top = 8
+  end
+end

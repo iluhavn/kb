@@ -33,8 +33,8 @@ implementation
 
 procedure TForm3.Button1Click(Sender: TObject);
 begin
-  Form3.ShowModal;
-  Form2.Close;
+  Form2.ShowModal;
+  Form3.Close;
 end;
 
 end.

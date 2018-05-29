@@ -1,11 +1,7 @@
 <?php
-$db = new mysqli('127.0.0.1', 'root', '', 'kb', 3306);
+$db = new Mysqli('127.0.0.1', 'root', '', 'kb');
 
-$db->query("SET NAMES UTF-8");
-$db->query("SET collation_connection = utf8_general_ci");
-$db->query("SET CHARACTER SET utf8");
-$res = $db->query("SELECT * FROM `komer4banki`");
-
+$res = $db->query("SELECT * FROM `komer4banki` ORDER BY `Вклад на год` DESC;");
 
 $r = array();
 while($item = $res->fetch_assoc()) {

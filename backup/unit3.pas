@@ -36,8 +36,9 @@ procedure TForm2.Button1Click(Sender: TObject);
 begin
  Form1.SQLQuery1.Active:=false;
     Form1.SQLQuery1.SQL.Clear;
-    Form1.SQLQuery1.SQL.add('SELECT * from  komer4banki WHERE `Вклад на год` BETWEEN '' + Form3.Edit1.Text + ' AND ' + Edit1.Text);
+    Form1.SQLQuery1.SQL.add('SELECT * from  komer4banki WHERE `Вклад на год` BETWEEN ' + Form3.Edit1.Text + ' AND ' + Edit1.Text + ';');
     Form1.SQLQuery1.Open;
+    Form3.Edit1.clear;
     Form2.Close;
 end;
 
